@@ -1,0 +1,11 @@
+# Environments
+.env
+.env.local
+.env.*
+
+# Node
+node_modules/
+
+# Build
+frontend/dist/
+backend/node_modules/

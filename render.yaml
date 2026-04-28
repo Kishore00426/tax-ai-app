@@ -1,0 +1,10 @@
+services:
+  - type: static
+    name: tax-ai-assistant
+    env: static
+    buildCommand: npm install && npm run build
+    publishPath: frontend/dist
+    baseDir: frontend
+    envVars:
+      - key: VITE_GEMINI_API_KEY
+        sync: false # You will need to add this manually in the Render dashboard for security
