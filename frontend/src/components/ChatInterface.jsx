@@ -144,7 +144,7 @@ const ChatInterface = () => {
   const sessionHistory = messages.filter(m => m.sender === 'user');
 
   return (
-    <div className="flex h-screen w-full bg-window-bg overflow-hidden relative">
+    <div className="flex h-[100dvh] w-full bg-window-bg overflow-hidden relative">
       
       {/* Mobile Sidebar Overlay */}
       <AnimatePresence>
@@ -268,7 +268,7 @@ const ChatInterface = () => {
       <div className="flex-1 flex flex-col relative h-full bg-zinc-950 overflow-hidden">
         
         {/* Header */}
-        <header className="flex items-center justify-between p-4 border-b border-white/5 bg-black/10 backdrop-blur-sm lg:hidden">
+        <header className="flex items-center justify-between p-4 pt-6 sm:pt-4 border-b border-white/5 bg-black/10 backdrop-blur-sm lg:hidden z-10">
           <div className="flex items-center gap-3">
             <button onClick={() => setMobileSidebarOpen(true)} className="p-2 text-gray-400 hover:text-white transition-colors">
               <Menu size={20} />
