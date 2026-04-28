@@ -268,7 +268,7 @@ const ChatInterface = () => {
       <div className="flex-1 flex flex-col relative h-full bg-zinc-950 overflow-hidden">
         
         {/* Header */}
-        <header className="flex items-center justify-between p-4 pt-6 sm:pt-4 border-b border-white/5 bg-black/10 backdrop-blur-sm lg:hidden z-10">
+        <header className="flex items-center justify-between p-4 pt-6 sm:pt-4 border-b border-white/10 bg-zinc-950/90 backdrop-blur-md lg:hidden z-10">
           <div className="flex items-center gap-3">
             <button onClick={() => setMobileSidebarOpen(true)} className="p-2 text-gray-400 hover:text-white transition-colors">
               <Menu size={20} />
@@ -342,26 +342,24 @@ const ChatInterface = () => {
         </main>
 
         {/* Input Area */}
-        <div className="p-4 sm:p-8 bg-transparent">
-          <div className="max-w-3xl mx-auto">
-            <div className="flex items-center gap-3 bg-transparent transition-all pl-5 sm:pl-6">
+        <div className="p-4 sm:p-8 bg-transparent w-full">
+          <div className="max-w-3xl mx-auto w-full">
+            <div className="flex items-center gap-2 bg-transparent transition-all w-full">
               <textarea
                 rows="1"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && (e.preventDefault(), handleSend())}
                 placeholder="Ask anything..."
-                className="flex-1 bg-gray-800 px-4  py-2 rounded-xl border-none text-white focus:ring-0 outline-none resize-none text-sm placeholder:text-gray-400"
+                className="flex-1 bg-gray-800 px-4 py-3 rounded-xl border-none text-white focus:ring-0 outline-none resize-none text-sm placeholder:text-gray-400 w-full min-w-0"
               />
-              <div className="flex items-center gap-1 pr-1 sm:pr-2">
-                <button 
-                  onClick={handleSend}
-                  disabled={loading || !input.trim()}
-                  className="p-2 sm:p-2.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-30 text-white rounded-xl shadow-lg transition-all transform active:scale-95"
-                >
-                  {loading ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
-                </button>
-              </div>
+              <button 
+                onClick={handleSend}
+                disabled={loading || !input.trim()}
+                className="p-3 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-30 text-white rounded-xl shadow-lg transition-all transform active:scale-95 shrink-0 flex items-center justify-center"
+              >
+                {loading ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
+              </button>
             </div>
             <p className="text-[9px] sm:text-[10px] text-center text-gray-600 mt-5 font-medium uppercase tracking-widest">
               AI Powered Tax Assistant v1.2

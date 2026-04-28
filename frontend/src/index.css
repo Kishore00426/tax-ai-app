@@ -14,7 +14,8 @@ body {
   color: #ececec;
   margin: 0;
   font-family: 'Inter', sans-serif;
-  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
   overflow: hidden;
 }
 
